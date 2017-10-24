@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+123
+</view>
+<view wx:for="{{array}}" class="section tc">
+  <!-- {{index}}: {{item}} -->
+  <video src="{{item}}"   controls ></video>
+</view>

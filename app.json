@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/evaluation/evaluation",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/video/video"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/evaluation/evaluation",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "日志"
+      }
+    ]
+  }
+}
