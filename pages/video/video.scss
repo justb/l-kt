@@ -1,0 +1,19 @@
+video {
+    width: 50%;
+    height: 30vw;
+}
+
+.video {
+    display: flex;
+    view {
+        margin-left: 5%;
+        text {
+            display: block;
+        }
+        input {
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding-left: 5%;
+        }
+    }
+}

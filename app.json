@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/evaluationList/evaluationList",
+    "pages/video/video",
     "pages/evaluation/evaluation",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/video/video"
+    "pages/chooseSkill/chooseSkill"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,7 +16,7 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/evaluation/evaluation",
+        "pagePath": "pages/evaluationList/evaluationList",
         "text": "首页"
       },
       {
