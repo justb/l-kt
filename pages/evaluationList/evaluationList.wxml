@@ -1,10 +1,16 @@
-<view>
-<view wx:for="{{skillLevel}}" class="skill-level">
-  <!-- {{index}}: {{item}} -->
-  <text>{{item}}</text>
-</view>
-<view wx:for="{{skillLevel}}" class='skill-level'>
-  <!-- {{index}}: {{item}} -->
-  <text>{{item}}</text>
-</view>
+<view class="list">
+  <view class="skill-level">
+    <view wx:for="{{skillLevel}}" bindtap='chooseLevel' wx:key="level-{{index}}" data-id="{{index}}" >
+      <!-- {{index}}: {{item}} -->
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <view class="skill-list">
+    <view wx:for="{{skillList}}" wx:key="list-{{index}}" bindtap='chooseSkill' data-id="{{index}}">
+      <!-- {{index}}: {{item}} -->
+      <text>{{item}}</text>
+    </view>
+  </view>
+
 </view>

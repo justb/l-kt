@@ -1,6 +1,4 @@
-//index.js
-//获取应用实例
-const app = getApp()
+const app = getApp();
 const qiniuUploader = require("../../utils/upload");
 if (!app.tempFilePath) {
   app.tempFilePath = []
@@ -10,14 +8,19 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
-  setData: function (e) {
-    // alert(e)
+  showToastCancel() {
+    const _this = this;
+    _this.$wuxToast.show({
+      type: 'cancel',
+      timer: 2000,
+      color: '#fff',
+      text: '上传失败',
+      success: () => console.log('上传失败')
+    })
   },
   onLoad: function () {
-
+    this.$wuxToast = app.wux(this).$wuxToast
   },
   getUserInfo: function (e) {
     var that = this
@@ -29,37 +32,35 @@ Page({
       success: function (res) {
         var tempFilePath = res.tempFilePath
         app.tempFilePath.push(res.tempFilePath)
-        wx.showLoading({
+        wx.showToast({
           title: '正在上传...',
+          icon: 'loading',
+          mask: true
         })
         qiniuUploader.upload(tempFilePath, (res) => {
-          // that.setData({
-          //   'imageURL': res.imageURL,
-          // });
           wx.hideLoading()
-          if(res.error){
-            wx.showToast({
-              title: '上传失败',
-              icon: 'fail',
-              duration: 1000
-            })
-          }else{
+          if (res.error) {
+            // wx.showToast({
+            //   title: '上传失败',
+            //   icon: 'loading',
+            // })
+            that.showToastCancel()
+          } else {
             wx.showToast({
               title: '上传成功',
               icon: 'success',
-              duration: 1000
             })
           }
         }, (error) => {
           console.log('error: ' + error);
           wx.hideLoading()
-          wx.showToast({
-            title: '上传失败',
-            icon: 'fail',
-            duration: 1000
-          })
+          // wx.showToast({
+          //   title: '上传失败',
+          //   icon: 'loading',
+          // })
+          that.showToastCancel()
         }, {
-            key: new Date().toString()+'.mp4',
+            key: new Date().toString() + '.mp4',
             region: 'ECN',
             uploadURL: 'https://upload.qiniup.com',
             domain: 'file.kim1.kim',

@@ -50,5 +50,10 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  toEvaluate: function(){
+    wx.navigateTo({
+      url: '../evaluationList/evaluationList'
+    })
   }
 })

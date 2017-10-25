@@ -1,4 +1,7 @@
-<!--index.wxml-->
+ <import src="../../components/toast.wxml"/> 
+
+<!-- is="toast" 匹配组件中的toast提示  如果用dialog的话这就是dialog -->
+<template is="toast" data="{{ ...$wux.toast }}"/>
 <view class="container">
   <view class="userinfo">
     <button bind:touchstart="getUserInfo"> 录制视频 </button>

@@ -10,4 +10,7 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <view>
+    <button bindtap='toEvaluate'>去测评</button>
+  </view>
 </view>

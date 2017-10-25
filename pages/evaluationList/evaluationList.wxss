@@ -1,13 +1,3 @@
 /**index.wxss**/
-video {
-  width: 50%;
-  height: 30vw; }
-
-.video {
+.list {
   display: flex; }
-  .video view text {
-    display: block; }
-  .video view input {
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding-left: 5%; }

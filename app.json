@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/evaluationList/evaluationList",
-    "pages/video/video",
-    "pages/evaluation/evaluation",
     "pages/index/index",
+    "pages/evaluation/evaluation",
+    "pages/evaluationList/evaluationList",
     "pages/logs/logs",
+    "pages/video/video",
     "pages/chooseSkill/chooseSkill"
   ],
   "window": {
@@ -16,7 +16,7 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/evaluationList/evaluationList",
+        "pagePath": "pages/index/index",
         "text": "首页"
       },
       {

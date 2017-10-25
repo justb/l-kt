@@ -1,15 +1,7 @@
 <!--index.wxml-->
-<view class='video'>
-  
-
-  <video src='http://ovyystj6c.bkt.clouddn.com/Tue%20Oct%2024%202017%2017:05:59%20GMT+0800%20%28CST%29.mp4' objectFit=''></video>
+<view class=''>
+<text>here is {{index}}</text>
+</view>
   <view>
-    <text>132222222123</text>
-    <input placeholder="请输入数量"  type="number"/>
-    <button type='primary' bind:touchstart="getUserInfo">上传</button>
+    <button bindtap='toTake'>去测评</button>
   </view>
-</view>
-<view wx:for="{{array}}" class="section tc">
-  <!-- {{index}}: {{item}} -->
-  <video src="{{item}}" controls></video>
-</view>

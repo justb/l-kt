@@ -6,23 +6,17 @@ Page({
   // data: {
   //   array: app.tempFilePath
   // },
-  onShow: function () {
-    // this.data = {
-    //   array: app.tempFilePath
-    // }
+  onLoad: function (options) {
+    console.log(options)
     this.setData({
-      array: app.tempFilePath
+      index: options.index
     })
-    console.log(app.tempFilePath.length)
 
-    app.tempFilePath.map(x => wx.getFileInfo({
-      'filePath': x,
-      success(res) {
-        console.log(res.size)
-        console.log(res)
-      }
-    }))
 
   },
-
+  toTake: function () {
+    wx.navigateTo({
+      url: '../evaluation/evaluation'
+    })
+  }
 })
