@@ -2,12 +2,12 @@
 
 <!-- is="toast" 匹配组件中的toast提示  如果用dialog的话这就是dialog -->
 <template is="toast" data="{{ ...$wux.toast }}"/>
-<view class="container">
+<view class="">
   <view class="userinfo">
-    <button bind:touchstart="getUserInfo"> 录制视频 </button>
+    <button bindtap="getUserInfo"> 录制视频 </button>
 
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view>
+    <button bindtap="toVideo"> 视频上传 </button>
   </view>
 </view>
