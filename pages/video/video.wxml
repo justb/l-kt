@@ -1,13 +1,16 @@
- <import src="../../components/toast.wxml"/> 
+<import src="../../components/toast.wxml" />
 
 <!-- is="toast" 匹配组件中的toast提示  如果用dialog的话这就是dialog -->
-<template is="toast" data="{{ ...$wux.toast }}"/>
-<view class='video'>
-  <view wx:for="{{array}}" class="">
+<template is="toast" data="{{ ...$wux.toast }}" />
+<view class=''>
+  <view wx:for="{{array}}" class="video" wx:key="{{index}}">
     <!-- {{index}}: {{item}} -->
-    <video src="{{item}}" controls></video>
-    <text>{{index}}</text>
-    <input placeholder="请输入数量" type="number" />
-    <button type='primary' bindtap="upload" data-id='{{index}}'>上传</button>
+    <video src="{{item.filePath}}" controls></video>
+    <view>
+      <text>{{index}}</text>
+      <input placeholder="请输入数量" type="number" />
+      <button type='primary' size='mini' bindtap="upload" data-id='{{index}}'>上传</button>
+      <button type='warn' size='mini' bindtap="delete" data-id='{{index}}'>删除</button>
+    </view>
   </view>
 </view>

@@ -1,9 +1,9 @@
-video {
-  width: 50%;
-  height: 30vw; }
-
 .video {
-  display: flex; }
+  display: flex;
+  margin-bottom: 3%; }
+  .video video {
+    width: 35%;
+    height: 23vw; }
   .video view {
     margin-left: 5%; }
     .video view text {
@@ -11,4 +11,9 @@ video {
     .video view input {
       border: 1px solid gray;
       border-radius: 10px;
-      padding-left: 5%; }
+      padding-left: 5%;
+      margin-bottom: 3%; }
+    .video view button {
+      width: 40%;
+      margin-right: 10%;
+      display: inline-block; }

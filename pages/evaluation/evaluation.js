@@ -12,8 +12,8 @@ Page({
       type: 'cancel',
       timer: 2000,
       color: '#fff',
-      text: '上传失败',
-      success: () => console.log('上传失败')
+      text: '存储失败，尝试清理视频',
+      success: () => console.log('存储失败')
     })
   },
   onLoad: function () {
@@ -28,41 +28,18 @@ Page({
       compressed: 0,
       success: function (res) {
         var tempFilePath = res.tempFilePath
-        app.tempFilePath.push(res.tempFilePath)
-        // wx.showToast({
-        //   title: '正在上传...',
-        //   icon: 'loading',
-        //   mask: true
-        // })
-        // qiniuUploader.upload(tempFilePath, (res) => {
-        //   wx.hideLoading()
-        //   if (res.error) {
-        //     // wx.showToast({
-        //     //   title: '上传失败',
-        //     //   icon: 'loading',
-        //     // })
-        //     that.showToastCancel()
-        //   } else {
-        //     wx.showToast({
-        //       title: '上传成功',
-        //       icon: 'success',
-        //     })
-        //   }
-        // }, (error) => {
-        //   console.log('error: ' + error);
-        //   wx.hideLoading()
-        //   // wx.showToast({
-        //   //   title: '上传失败',
-        //   //   icon: 'loading',
-        //   // })
-        //   that.showToastCancel()
-        // }, {
-        //     key: new Date().toString() + '.mp4',
-        //     region: 'ECN',
-        //     uploadURL: 'https://upload.qiniup.com',
-        //     domain: 'file.kim1.kim',
-        //     uptoken: 'D0kBjb8UpWlNtfKDUwkPkG1m1oIHE6mpnYIa3Yvw:qf9B9O8lXpmD9l48DN-7NLWSPV8=:eyJzY29wZSI6ImZpbGUiLCJkZWFkbGluZSI6MTUwODgzOTQ2NH0=',
-        //   })
+        // app.tempFilePath.push(res.tempFilePath)
+        wx.saveFile({
+          tempFilePath: tempFilePath,
+          success: function (res) {
+            var savedFilePath = res.savedFilePath
+            console.log(savedFilePath)
+            app.tempFilePath.push(savedFilePath)
+          },
+          fail: function(){
+            that.showToastCancel()
+          }
+        })
       }
     })
   },

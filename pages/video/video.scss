@@ -1,10 +1,10 @@
-video {
-    width: 50%;
-    height: 30vw;
-}
-
 .video {
     display: flex;
+    margin-bottom: 3%;
+    video {
+        width: 35%;
+        height: 23vw;
+    }
     view {
         margin-left: 5%;
         text {
@@ -14,6 +14,12 @@ video {
             border: 1px solid gray;
             border-radius: 10px;
             padding-left: 5%;
+            margin-bottom: 3%;
+        }
+        button{
+            width: 40%;
+            margin-right: 10%;
+            display: inline-block;
         }
     }
 }
